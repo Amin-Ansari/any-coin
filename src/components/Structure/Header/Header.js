@@ -6,7 +6,7 @@ import "./Header.css";
 const Header = (props) => {
   return (
     <header className="container-fluid header">
-      <Container className="d-flex justify-content-space-between align-items-center h-100 py-2">
+      <Container className="d-flex justify-content-space-between align-items-center h-100">
         <HeaderLogo />
       </Container>
     </header>
