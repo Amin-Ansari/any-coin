@@ -1,0 +1,5 @@
+.header {
+  background-color: #1a1e2f;
+  height: calc(15vw + 20px);
+  max-height: 84px;
+}

@@ -1,14 +1,11 @@
 import React from "react";
-import ContainerFluid from "./components/UI/ContainerFluid";
-import Container from "./components/UI/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./components/Structure/Header/Header";
 
 function App() {
   return (
     <React.Fragment>
-      <ContainerFluid>
-        <Container>Hello World</Container>
-      </ContainerFluid>
+      <Header></Header>
     </React.Fragment>
   );
 }
