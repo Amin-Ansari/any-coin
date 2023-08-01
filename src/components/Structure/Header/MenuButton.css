@@ -3,12 +3,13 @@
   background-color: transparent;
   border: none;
   height: 80%;
-  width: 30px;
+  width: 50px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  padding: 0px 0.6rem;
 }
 
 .bar {

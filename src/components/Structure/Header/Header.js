@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import HeaderLogo from "./HeaderLogo";
 import Container from "../../UI/Container";
 import SearchForm from "./SearchForm";
-import "./Header.css";
+import OffCanvas from "../Overlay/OffCanvas";
 import MenuButton from "./MenuButton";
+import "./Header.css";
 
 const Header = (props) => {
   const [buttonToggleState, setToggleState] = useState(false); //This state will control both offcanvas menu and offcanvas button
 
-  const toggleTheButtonState = () => {
-    setToggleState(() => !buttonToggleState); //This function will toggle the offcanvas button (Note: The logic of this function is outside of the executing components)
+  const toggleTheButtonState = (state) => {
+    setToggleState(state); //This function will toggle the offcanvas button (Note: The logic of this function is outside of the executing components); Also it take the state value from the controlled component
   };
 
   return (
@@ -21,6 +22,9 @@ const Header = (props) => {
           toggleState={buttonToggleState}
           onButtonToggle={toggleTheButtonState}
         />
+        {buttonToggleState && (
+          <OffCanvas onClosingOffCanvas={toggleTheButtonState} />
+        )}
       </Container>
     </header>
   );

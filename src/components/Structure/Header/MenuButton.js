@@ -3,7 +3,7 @@ import "./MenuButton.css";
 
 const MenuButton = (props) => {
   const toggleTheButton = () => {
-    props.onButtonToggle();
+    props.onButtonToggle(!props.toggleState);
   };
   return (
     <button className="menu-button d-flex d-lg-none" onClick={toggleTheButton}>
