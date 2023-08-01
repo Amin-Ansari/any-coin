@@ -1,0 +1,30 @@
+.search-input {
+  outline: none;
+  border: 1.95px solid #343436;
+  padding: 0.35rem 0.7rem;
+  background-color: transparent;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  margin: 0px 0.7rem;
+  font-size: 1.1rem;
+  width: 250px;
+}
+.search-input::placeholder {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.base-select {
+  background-color: #101113;
+  color: #fff;
+  border: 1.95px solid #343436;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.35rem;
+}
+select option {
+  background: #101113;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
