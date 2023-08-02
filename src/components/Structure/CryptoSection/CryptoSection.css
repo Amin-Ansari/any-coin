@@ -2,3 +2,12 @@
   margin-top: 7rem;
   color: #fff;
 }
+.crypto-section {
+  padding: 0px 1.2rem;
+}
+
+@media all and (min-width: 992px) {
+  .crypto-section {
+    padding: 0px 1rem;
+  }
+}

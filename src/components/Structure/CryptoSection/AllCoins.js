@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import CoinCategory from "./CoinCategory";
+import ItemLabels from "./ItemLabels";
+import CoinsList from "./CoinsList";
 import "./AllCoins.css";
 
 const AllCoins = () => {
@@ -34,7 +36,10 @@ const AllCoins = () => {
         isIncremental={isIncrementalSelect}
         decremental={isDecrementalSelect}
       />
-      <div className="coins-container"></div>
+      <div className="coins-container">
+        <ItemLabels />
+        <CoinsList />
+      </div>
     </>
   );
 };
