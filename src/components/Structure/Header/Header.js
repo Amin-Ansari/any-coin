@@ -17,7 +17,7 @@ const Header = (props) => {
     <header className="container-fluid header">
       <Container className="d-flex justify-content-between align-items-center h-100">
         <HeaderLogo />
-        <SearchForm />
+        <SearchForm updateTheBase={props.onBaseChange} />
         <MenuButton
           toggleState={buttonToggleState}
           onButtonToggle={toggleTheButtonState}
