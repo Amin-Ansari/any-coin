@@ -21,7 +21,7 @@
   border: 1.95px solid #343436;
   border-radius: 8px;
   font-size: 1rem;
-  padding: 0.35rem;
+  padding: 0.5rem 0.35rem;
 }
 select option {
   background: #101113;

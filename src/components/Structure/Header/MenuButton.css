@@ -11,7 +11,9 @@
   cursor: pointer;
   padding: 0px 0.6rem;
 }
-
+.menu-button:hover {
+  background-color: blue;
+}
 .bar {
   background-color: #fff;
   display: inline-block;
@@ -20,6 +22,7 @@
   height: 3px;
   margin: 3px 0px;
   transition: all 0.4s;
+  cursor: pointer;
 }
 
 .clicked:nth-of-type(1) {
