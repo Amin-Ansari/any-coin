@@ -1,6 +1,6 @@
 .search-input {
   outline: none;
-  border: 1.95px solid #343436;
+  border: 2px solid #363739;
   padding: 0.35rem 0.7rem;
   background-color: transparent;
   border-radius: 8px;
@@ -18,7 +18,7 @@
 .base-select {
   background-color: #101113;
   color: #fff;
-  border: 1.95px solid #343436;
+  border: 2px solid #363739;
   border-radius: 8px;
   font-size: 1rem;
   padding: 0.45rem 0.35rem;

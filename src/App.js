@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Structure/Header/Header";
+import CryptoSection from "./components/Structure/CryptoSection/CryptoSection";
 
 function App() {
   const [priceBase, setPriceBase] = useState("USD");
@@ -14,6 +15,7 @@ function App() {
   return (
     <React.Fragment>
       <Header onBaseChange={changeTheBase}></Header>
+      <CryptoSection />
     </React.Fragment>
   );
 }

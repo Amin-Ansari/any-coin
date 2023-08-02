@@ -1,0 +1,37 @@
+.coin-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem;
+  justify-content: center;
+}
+.coin-category-button {
+  outline: none;
+  background-color: transparent;
+  border-radius: 0.8rem;
+  display: flex;
+  padding: 0.2rem 1.4rem 0.3rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+  color: #686f81;
+  border: none;
+  transition: all 0.4s;
+  margin: 0rem 0.5rem;
+}
+.coin-category-button:hover {
+  color: #fff;
+}
+.active-category {
+  background-color: #202122;
+  color: #fff;
+}
+
+@media all and (min-width: 992px) {
+  .coin-container {
+    justify-content: flex-start;
+  }
+  .coin-category-button {
+    padding: 0.2rem 1rem 0.3rem;
+    margin: 0rem;
+  }
+}
