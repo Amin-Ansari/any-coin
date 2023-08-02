@@ -5,6 +5,8 @@ import Header from "./components/Structure/Header/Header";
 function App() {
   const [priceBase, setPriceBase] = useState("USD");
 
+  console.log(priceBase);
+
   const changeTheBase = (base) => {
     setPriceBase(base);
   };

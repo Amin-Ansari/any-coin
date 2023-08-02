@@ -11,9 +11,6 @@
   cursor: pointer;
   padding: 0px 0.6rem;
 }
-.menu-button:hover {
-  background-color: blue;
-}
 .bar {
   background-color: #fff;
   display: inline-block;

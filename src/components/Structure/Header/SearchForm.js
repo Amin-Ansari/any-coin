@@ -7,7 +7,7 @@ const SearchForm = (props) => {
   };
 
   return (
-    <form className="d-none d-lg-block">
+    <form className={`${props.className}`}>
       <select className="base-select" onChange={updateTheBase}>
         <option value={"USD"}>🇺🇸 USD</option>
         <option value={"ERU"}>🇪🇺 ERU</option>
