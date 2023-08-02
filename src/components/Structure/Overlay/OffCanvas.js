@@ -4,14 +4,17 @@ import "./OffCanvas.css";
 
 const OffCanvasMenu = (props) => {
   const closeOffCanvas = () => {
-    // props.onClosing(false);
     props.closeFunction(false);
   };
 
   return (
     <>
       <div className="backDrop" onClick={closeOffCanvas}></div>
-      <div className="offCanvasMenu"></div>
+      <div
+        className={`offCanvasMenu ${
+          props.buttonState ? "translate-reset" : ""
+        }`}
+      ></div>
     </>
   );
 };
@@ -19,7 +22,10 @@ const OffCanvasMenu = (props) => {
 const OffCanvas = (props) => {
   const parentNode = document.getElementById("overlay");
   return createPortal(
-    <OffCanvasMenu closeFunction={props.onClosingOffCanvas} />,
+    <OffCanvasMenu
+      closeFunction={props.onClosingOffCanvas}
+      buttonState={props.toggleState}
+    />,
     parentNode
   );
 };
