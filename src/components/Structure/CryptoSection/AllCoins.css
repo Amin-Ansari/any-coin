@@ -10,6 +10,8 @@
 }
 .name-section {
   display: flex;
+  text-align: center;
+  align-items: stretch;
   padding: 1rem 0rem;
 }
 .item-name {
@@ -27,7 +29,6 @@
 .coins-list {
   width: 100%;
   height: 100%;
-  border: 1px dotted red;
   margin: 0px;
   padding: 0px;
   overflow-y: auto;
@@ -36,7 +37,27 @@
 .coins-list li {
   width: 100%;
   padding: 1rem 0.8rem;
+  display: flex;
 }
 .coins-list > li:nth-child(odd) {
   background-color: #101113;
+}
+
+.coin-section {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: calc(100% / 3.3);
+  direction: ltr;
+}
+.coin-section p {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+}
+.coin-section:nth-of-type(3) {
+  width: 13%;
+}
+.coin-section > p {
+  direction: ltr;
 }
