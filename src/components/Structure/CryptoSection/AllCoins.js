@@ -4,7 +4,7 @@ import ItemLabels from "./ItemLabels";
 import CoinsList from "./CoinsList";
 import "./AllCoins.css";
 
-const AllCoins = () => {
+const AllCoins = (props) => {
   //These states are for categories
   const [isAllSelect, updateIsAllSelect] = useState(true);
   const [isIncrementalSelect, updateIsincremental] = useState(false);
@@ -38,7 +38,7 @@ const AllCoins = () => {
       />
       <div className="coins-container">
         <ItemLabels />
-        <CoinsList />
+        <CoinsList tokenList={props.allTokens} />
       </div>
     </>
   );

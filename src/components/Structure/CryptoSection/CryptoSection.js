@@ -6,7 +6,7 @@ import "./CryptoSection.css";
 const CryptoSection = (props) => {
   return (
     <Container className="uppder-margin crypto-section">
-      <AllCoins />
+      <AllCoins allTokens={props.tokens} />
     </Container>
   );
 };

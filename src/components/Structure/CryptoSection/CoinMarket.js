@@ -4,7 +4,7 @@ import "./CoinMarket.css";
 const CoinMarket = (props) => {
   return (
     <div className="market-capacity coin-section">
-      <p>446683054703</p>
+      <p>{props.cap}</p>
     </div>
   );
 };

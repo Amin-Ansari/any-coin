@@ -12,12 +12,10 @@ function App() {
   };
   const ctx = useContext(coinContex);
 
-  console.log(ctx);
-
   return (
     <React.Fragment>
       <Header onBaseChange={changeTheBase}></Header>
-      <CryptoSection />
+      <CryptoSection tokens={ctx} />
     </React.Fragment>
   );
 }

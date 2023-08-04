@@ -4,7 +4,7 @@ import "./CoinChange.css";
 const CoinChange = (props) => {
   return (
     <div className="change coin-section">
-      <p>-54.9909</p>
+      <p>{props.change}</p>
     </div>
   );
 };
