@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import HeaderLogo from "./HeaderLogo";
 import Container from "../../UI/Container";
 import SearchForm from "./SearchForm";

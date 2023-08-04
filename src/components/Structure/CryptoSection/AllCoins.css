@@ -22,7 +22,7 @@
   font-size: 0.93rem;
   letter-spacing: -0.02rem;
 }
-.item-name:nth-child(3) {
+.item-name:nth-child(2) {
   width: 13%;
 }
 
@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
 }
-.coin-section:nth-of-type(3) {
+.coin-section:nth-of-type(2) {
   width: 13%;
 }
 .coin-section > p {
