@@ -38,7 +38,10 @@ const AllCoins = (props) => {
       />
       <div className="coins-container">
         <ItemLabels />
-        <CoinsList tokenList={props.allTokens} />
+        <CoinsList
+          tokenList={props.allTokens}
+          loadingState={props.allTokens.isLoading}
+        />
       </div>
     </>
   );

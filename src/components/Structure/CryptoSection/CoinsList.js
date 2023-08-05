@@ -3,27 +3,29 @@ import CoinNameAndImage from "./CoinNameAndImage";
 import CoinChange from "./CoinChange";
 import CoinPrice from "./CoinPrice";
 import CoinMarket from "./CoinMarket";
+import Loader from "../../UI/Loader";
 import "./AllCoins.css";
 
 const CoinsList = (props) => {
   const coins = props.tokenList;
   const coinArray = [];
-
   for (let key in coins) {
-    coinArray.push({
-      id: coins[key].id,
-      tokenName: coins[key]["name"],
-      symbol: coins[key].symbol,
-      price: coins[key]["current_price"],
-      marketCap: coins[key]["market_cap"],
-      changeRate: coins[key]["price_change_percentage_24h"],
-      image: coins[key].image
-    });
+    if (coins[key].id) {
+      coinArray.push({
+        id: coins[key].id,
+        tokenName: coins[key]["name"],
+        symbol: coins[key].symbol,
+        price: coins[key]["current_price"],
+        marketCap: coins[key]["market_cap"],
+        changeRate: coins[key]["price_change_percentage_24h"],
+        image: coins[key].image
+      });
+    }
   }
 
   return (
     <ul className="coins-list">
-      {console.log(coinArray)}
+      {props.loadingState ? <Loader /> : ""}
       {coinArray.map((item) => (
         <li key={item.tokenName}>
           <CoinMarket cap={item.marketCap} />
