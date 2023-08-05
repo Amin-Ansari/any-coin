@@ -26,6 +26,11 @@ const CoinsList = (props) => {
   return (
     <ul className="coins-list">
       {props.loadingState ? <Loader /> : ""}
+      {props.error && !props.loadingState ? (
+        <p className="error-message">{props.error.toString()}</p>
+      ) : (
+        ""
+      )}
       {coinArray.map((item) => (
         <li key={item.tokenName}>
           <CoinMarket cap={item.marketCap} />

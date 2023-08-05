@@ -41,6 +41,7 @@ const AllCoins = (props) => {
         <CoinsList
           tokenList={props.allTokens}
           loadingState={props.allTokens.isLoading}
+          error={props.allTokens.errorMessage.toString()}
         />
       </div>
     </>
