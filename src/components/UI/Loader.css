@@ -3,6 +3,7 @@
   justify-content: center;
   flex-flow: column;
   align-items: center;
+  margin-top: 5rem;
 }
 .lds-roller {
   display: inline-block;
@@ -80,15 +81,6 @@
   top: 56px;
   left: 12px;
 }
-@keyframes lds-roller {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .loading-p {
   width: 100%;
   text-align: center;
@@ -96,4 +88,13 @@
   direction: ltr;
   margin-top: 0.5rem;
   font-weight: 600;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
