@@ -8,7 +8,7 @@ const CurrencySymbol = () => {
   return (
     <>
       {ctx.priceBase == "USD" && <span>$</span>}
-      {ctx.priceBase == "ERU" && <span>€</span>}
+      {ctx.priceBase == "EUR" && <span>€</span>}
       {ctx.priceBase == "GBP" && <span>£</span>}
       {ctx.priceBase == "IRR" && <span>﷼</span>}
     </>
