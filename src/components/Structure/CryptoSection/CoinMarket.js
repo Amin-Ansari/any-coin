@@ -6,7 +6,6 @@ import "./CoinMarket.css";
 
 const CoinMarket = (props) => {
   const ctx = useContext(coinContex);
-  console.log(ctx);
   return (
     <div className="market-capacity coin-section">
       <p>

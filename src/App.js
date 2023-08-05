@@ -6,8 +6,6 @@ import coinContex from "./Storage/coin-contex";
 
 function App() {
   const ctx = useContext(coinContex);
-  console.log(ctx.priceBase);
-
   return (
     <React.Fragment>
       <Header></Header>
@@ -16,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);
