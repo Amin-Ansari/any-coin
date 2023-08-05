@@ -19,10 +19,7 @@ const OffCanvasMenu = (props) => {
           props.buttonState ? "translate-reset" : ""
         }`}
       >
-        <SearchForm
-          updateTheBase={props.onBaseChange}
-          className={"d-block d-lg-none"}
-        />
+        <SearchForm className={"d-block d-lg-none"} />
       </div>
     </>
   );

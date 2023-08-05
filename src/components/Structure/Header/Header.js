@@ -17,20 +17,12 @@ const Header = (props) => {
     <header className="container-fluid header">
       <Container className="d-flex justify-content-between align-items-center h-100">
         <HeaderLogo />
-        <SearchForm
-          updateTheBase={props.onBaseChange}
-          className={"d-none d-lg-block"}
-        />
+        <SearchForm className={"d-none d-lg-block"} />
         <MenuButton
           toggleState={buttonToggleState}
           onButtonToggle={toggleTheButtonState}
         />
-        {buttonToggleState && (
-          <OffCanvas
-            onOffCanvasBaseChange={props.onBaseChange}
-            toggleState={buttonToggleState}
-          />
-        )}
+        {buttonToggleState && <OffCanvas toggleState={buttonToggleState} />}
       </Container>
     </header>
   );

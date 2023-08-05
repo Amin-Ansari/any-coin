@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import coinContex from "../../../Storage/coin-contex";
 import "./SearchForm.css";
 
 const SearchForm = (props) => {
+  const ctx = useContext(coinContex);
   const updateTheBase = (e) => {
-    props.updateTheBase(e.target.value);
+    ctx.setTheBase(e.target.value);
   };
 
   return (

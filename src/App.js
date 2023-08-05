@@ -5,16 +5,12 @@ import CryptoSection from "./components/Structure/CryptoSection/CryptoSection";
 import coinContex from "./Storage/coin-contex";
 
 function App() {
-  const [priceBase, setPriceBase] = useState("USD");
-
-  const changeTheBase = (base) => {
-    setPriceBase(base);
-  };
   const ctx = useContext(coinContex);
+  console.log(ctx.priceBase);
 
   return (
     <React.Fragment>
-      <Header onBaseChange={changeTheBase}></Header>
+      <Header></Header>
       <CryptoSection tokens={ctx} />
     </React.Fragment>
   );

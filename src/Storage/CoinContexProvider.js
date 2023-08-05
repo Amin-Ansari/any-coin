@@ -3,9 +3,14 @@ import coinContex from "./coin-contex";
 
 const CoinContexProvider = (props) => {
   const [coinsState, setCoins] = useState({ tokens: {} });
+  const [priceBase, setPriceBase] = useState("USD");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const { currency } = props;
+
+  const changeTheBase = (base) => {
+    setPriceBase(base);
+  };
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -34,7 +39,9 @@ const CoinContexProvider = (props) => {
   const coinData = {
     ...coinsState,
     isLoading,
-    errorMessage
+    errorMessage,
+    priceBase,
+    setTheBase: changeTheBase
   };
   return (
     <coinContex.Provider value={coinData}>{props.children}</coinContex.Provider>
