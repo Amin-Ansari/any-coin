@@ -1,3 +1,13 @@
 .change {
   direction: ltr;
 }
+.green {
+  color: #10ac70;
+}
+.red {
+  color: #aa1d26;
+}
+.change-icon {
+  display: inline-block;
+  margin: 0px 0.5rem 0px 0px;
+}

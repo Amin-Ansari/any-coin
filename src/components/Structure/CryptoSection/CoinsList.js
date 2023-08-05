@@ -16,7 +16,7 @@ const CoinsList = (props) => {
       symbol: coins[key].symbol,
       price: coins[key]["current_price"],
       marketCap: coins[key]["market_cap"],
-      changeRate: coins[key]["ath_change_percentage"],
+      changeRate: coins[key]["price_change_percentage_24h"],
       image: coins[key].image
     });
   }
@@ -24,20 +24,18 @@ const CoinsList = (props) => {
   return (
     <ul className="coins-list">
       {console.log(coinArray)}
-      {coinArray.map((item) => {
-        return (
-          <li key={item.symbol}>
-            <CoinMarket cap={item.marketCap} />
-            <CoinChange change={item.changeRate} />
-            <CoinPrice price={item.price} />
-            <CoinNameAndImage
-              name={item.tokenName}
-              image={item.image}
-              symbol={item.symbold}
-            />
-          </li>
-        );
-      })}
+      {coinArray.map((item) => (
+        <li key={item.tokenName}>
+          <CoinMarket cap={item.marketCap} />
+          <CoinChange change={item.changeRate} />
+          <CoinPrice price={item.price} />
+          <CoinNameAndImage
+            name={item.tokenName}
+            image={item.image}
+            symbol={item.symbold}
+          />
+        </li>
+      ))}
     </ul>
   );
 };
