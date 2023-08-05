@@ -6,6 +6,7 @@ const CoinContexProvider = (props) => {
   const [priceBase, setPriceBase] = useState("USD");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [rate, setRate] = useState(1);
 
   const changeTheBase = (base) => {
     setPriceBase(base);
@@ -33,6 +34,19 @@ const CoinContexProvider = (props) => {
         setIsLoading(false);
       }
     };
+
+    //The function below line will get the price of rial and changes the convert rate
+    const getRialValue = async () => {
+      const rialRequest = await fetch(
+        "https://api.currencyapi.com/v3/latest?apikey=cur_live_GUUfxK65JOSzc1wizzj7is3wP7eT3VOfkrAPGIZG"
+      );
+
+      const response = await rialRequest.json();
+
+      setRate(response.data.IRR.value);
+    };
+    getRialValue();
+
     fetchCoins();
   }, [priceBase]);
 
@@ -41,6 +55,7 @@ const CoinContexProvider = (props) => {
     isLoading,
     errorMessage,
     priceBase,
+    rate,
     setTheBase: changeTheBase
   };
   return (

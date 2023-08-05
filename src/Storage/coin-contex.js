@@ -5,6 +5,7 @@ const coinContex = React.createContext({
   isLoading: "",
   errorMessage: "",
   priceBase: "",
+  rate: 1,
   setTheBase: () => {}
 });
 
