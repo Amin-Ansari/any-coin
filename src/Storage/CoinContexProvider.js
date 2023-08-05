@@ -6,7 +6,6 @@ const CoinContexProvider = (props) => {
   const [priceBase, setPriceBase] = useState("USD");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const { currency } = props;
 
   const changeTheBase = (base) => {
     setPriceBase(base);
@@ -17,8 +16,9 @@ const CoinContexProvider = (props) => {
       setIsLoading(true);
       setErrorMessage("");
       try {
+        const currency = priceBase !== "IRR" ? priceBase : "USD";
         const coinsRequest = await fetch(
-          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`
         );
 
         if (coinsRequest.ok) {
@@ -34,7 +34,7 @@ const CoinContexProvider = (props) => {
       }
     };
     fetchCoins();
-  }, []);
+  }, [priceBase]);
 
   const coinData = {
     ...coinsState,

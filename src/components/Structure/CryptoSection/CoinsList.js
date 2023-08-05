@@ -25,24 +25,26 @@ const CoinsList = (props) => {
 
   return (
     <ul className="coins-list">
-      {props.loadingState ? <Loader /> : ""}
+      {props.loadingState && !props.error ? <Loader /> : ""}
       {props.error && !props.loadingState ? (
         <p className="error-message">{props.error.toString()}</p>
       ) : (
         ""
       )}
-      {coinArray.map((item) => (
-        <li key={item.tokenName}>
-          <CoinMarket cap={item.marketCap} />
-          <CoinChange change={item.changeRate} />
-          <CoinPrice price={item.price} />
-          <CoinNameAndImage
-            name={item.tokenName}
-            image={item.image}
-            symbol={item.symbold}
-          />
-        </li>
-      ))}
+      {!props.loadingState
+        ? coinArray.map((item) => (
+            <li key={item.tokenName}>
+              <CoinMarket cap={item.marketCap} />
+              <CoinChange change={item.changeRate} />
+              <CoinPrice price={item.price} />
+              <CoinNameAndImage
+                name={item.tokenName}
+                image={item.image}
+                symbol={item.symbold}
+              />
+            </li>
+          ))
+        : ""}
     </ul>
   );
 };

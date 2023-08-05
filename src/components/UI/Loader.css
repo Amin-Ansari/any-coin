@@ -92,7 +92,8 @@
 .loading-p {
   width: 100%;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   direction: ltr;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
 }

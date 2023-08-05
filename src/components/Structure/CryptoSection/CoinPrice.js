@@ -1,10 +1,14 @@
 import React from "react";
+import CurrencySymbol from "./CurrencySymbol";
 import "./CoinPrice.css";
 
 const CoinPrice = (props) => {
   return (
     <div className="price coin-section">
-      <p>{props.price}</p>
+      <p>
+        <CurrencySymbol />
+        {props.price}
+      </p>
     </div>
   );
 };
