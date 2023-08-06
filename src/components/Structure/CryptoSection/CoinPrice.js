@@ -10,7 +10,9 @@ const CoinPrice = (props) => {
     <div className="price coin-section">
       <p>
         <CurrencySymbol />
-        {ctx.priceBase !== "IRR" ? props.price : props.price * ctx.rate}
+        {ctx.priceBase !== "IRR"
+          ? props.price.toLocaleString()
+          : (props.price * ctx.rate).toLocaleString()}
       </p>
     </div>
   );
