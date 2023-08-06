@@ -10,7 +10,11 @@ const SearchForm = (props) => {
 
   return (
     <form className={`${props.className}`}>
-      <select className="base-select" onChange={updateTheBase}>
+      <select
+        className="base-select"
+        onChange={updateTheBase}
+        value={ctx.priceBase}
+      >
         <option value={"USD"}>🇺🇸 USD</option>
         <option value={"EUR"}>🇪🇺 EUR</option>
         <option value={"GBP"}>🇬🇧 GBP </option>
