@@ -52,8 +52,6 @@ const CoinsList = (props) => {
     }
   }
 
-  console.log(increamentalCoins);
-
   return (
     <ul className="coins-list">
       {props.loadingState && !props.error ? <Loader /> : ""}
@@ -62,8 +60,37 @@ const CoinsList = (props) => {
       ) : (
         ""
       )}
-      {!props.loadingState
+      {props.allCoins && !props.loadingState
         ? coinArray.map((item) => (
+            <li key={item.tokenName}>
+              <CoinMarket cap={item.marketCap} />
+              <CoinChange change={item.changeRate} />
+              <CoinPrice price={item.price} />
+              <CoinNameAndImage
+                name={item.tokenName}
+                image={item.image}
+                symbol={item.symbold}
+              />
+            </li>
+          ))
+        : ""}
+      {props.incrementalCoins && !props.loadingState
+        ? increamentalCoins.map((item) => (
+            <li key={item.tokenName}>
+              <CoinMarket cap={item.marketCap} />
+              <CoinChange change={item.changeRate} />
+              <CoinPrice price={item.price} />
+              <CoinNameAndImage
+                name={item.tokenName}
+                image={item.image}
+                symbol={item.symbold}
+              />
+            </li>
+          ))
+        : ""}
+
+      {props.decrementalCoins && !props.loadingState
+        ? decreamentalCoins.map((item) => (
             <li key={item.tokenName}>
               <CoinMarket cap={item.marketCap} />
               <CoinChange change={item.changeRate} />
