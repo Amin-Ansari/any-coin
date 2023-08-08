@@ -19,7 +19,11 @@ const OffCanvasMenu = (props) => {
           props.buttonState ? "translate-reset" : ""
         }`}
       >
-        <SearchForm className={"d-block d-lg-none"} />
+        <SearchForm
+          className={"d-block d-lg-none"}
+          searchedName={props.searchedName}
+          onSearchingToken={props.onSearchingToken}
+        />
       </div>
     </>
   );
@@ -31,6 +35,8 @@ const OffCanvas = (props) => {
     <OffCanvasMenu
       onClosing={props.onClosingOffCanvas}
       buttonState={props.toggleState}
+      searchedName={props.searchedName}
+      onSearchingToken={props.onSearchingToken}
     />,
     parentNode
   );

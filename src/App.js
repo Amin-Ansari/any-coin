@@ -10,6 +10,9 @@ function App() {
   const [isIncrementalSelect, updateIsincremental] = useState(false);
   const [isDecrementalSelect, updateIsDecremental] = useState(false);
 
+  //The state which stores the name of the coin we have searched
+  const [searchedToken, setSearchedToken] = useState("");
+
   const allSetlected = () => {
     //Selects all
     updateIsAllSelect(true);
@@ -29,10 +32,18 @@ function App() {
     updateIsincremental(false);
   };
 
+  //Update the name that we have search
+  const updateSearchedName = (name) => {
+    setSearchedToken(name);
+  };
+
   const ctx = useContext(coinContex);
   return (
     <React.Fragment>
-      <Header></Header>
+      <Header
+        onSearch={updateSearchedName}
+        searchedName={searchedToken}
+      ></Header>
       <CryptoSection
         tokens={ctx}
         onAllClicked={allSetlected}
@@ -41,6 +52,7 @@ function App() {
         allState={isAllSelect}
         incrementalState={isIncrementalSelect}
         decrementalState={isDecrementalSelect}
+        searchedName={searchedToken}
       />
     </React.Fragment>
   );

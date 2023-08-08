@@ -24,6 +24,7 @@ const AllCoins = (props) => {
           allCoins={props.isAllSelected}
           incrementalCoins={props.isIncrementalSelected}
           decrementalCoins={props.isDecrementalSelected}
+          searchedName={props.name}
         />
       </div>
     </>

@@ -8,6 +8,10 @@ const SearchForm = (props) => {
     ctx.setTheBase(e.target.value);
   };
 
+  const updateSearch = (e) => {
+    props.onSearchingToken(e.target.value);
+  };
+
   return (
     <form className={`${props.className}`}>
       <select
@@ -24,6 +28,8 @@ const SearchForm = (props) => {
         type="search"
         placeholder={`توکن را جستوجوکنید`}
         className="search-input"
+        onChange={updateSearch}
+        value={props.searchedName}
       ></input>
     </form>
   );

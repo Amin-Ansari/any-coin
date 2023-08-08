@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CoinNameAndImage from "./CoinNameAndImage";
 import CoinChange from "./CoinChange";
 import CoinPrice from "./CoinPrice";
@@ -11,6 +11,9 @@ const CoinsList = (props) => {
   const coinArray = [];
   const increamentalCoins = [];
   const decreamentalCoins = [];
+  const searchedName = props.searchedName;
+  const searchedByName = [];
+
   for (let key in coins) {
     if (coins[key].id) {
       coinArray.push({
@@ -52,15 +55,21 @@ const CoinsList = (props) => {
     }
   }
 
+  for (let item of coinArray) {
+    if (item.tokenName.includes(searchedName)) {
+      searchedByName.push(item);
+    }
+  }
+
   return (
     <ul className="coins-list">
       {props.loadingState && !props.error ? <Loader /> : ""}
-      {props.error && !props.loadingState ? (
+      {props.error && !searchedName && !props.loadingState ? (
         <p className="error-message">{props.error.toString()}</p>
       ) : (
         ""
       )}
-      {props.allCoins && !props.loadingState
+      {props.allCoins && !searchedName && !props.loadingState
         ? coinArray.map((item) => (
             <li key={item.tokenName}>
               <CoinMarket cap={item.marketCap} />
@@ -74,7 +83,7 @@ const CoinsList = (props) => {
             </li>
           ))
         : ""}
-      {props.incrementalCoins && !props.loadingState
+      {props.incrementalCoins && !searchedName && !props.loadingState
         ? increamentalCoins.map((item) => (
             <li key={item.tokenName}>
               <CoinMarket cap={item.marketCap} />
@@ -89,8 +98,23 @@ const CoinsList = (props) => {
           ))
         : ""}
 
-      {props.decrementalCoins && !props.loadingState
+      {props.decrementalCoins && !searchedName && !props.loadingState
         ? decreamentalCoins.map((item) => (
+            <li key={item.tokenName}>
+              <CoinMarket cap={item.marketCap} />
+              <CoinChange change={item.changeRate} />
+              <CoinPrice price={item.price} />
+              <CoinNameAndImage
+                name={item.tokenName}
+                image={item.image}
+                symbol={item.symbold}
+              />
+            </li>
+          ))
+        : ""}
+
+      {searchedName
+        ? searchedByName.map((item) => (
             <li key={item.tokenName}>
               <CoinMarket cap={item.marketCap} />
               <CoinChange change={item.changeRate} />

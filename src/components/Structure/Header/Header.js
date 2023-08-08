@@ -17,7 +17,11 @@ const Header = (props) => {
     <header className="container-fluid header">
       <Container className="d-flex justify-content-between align-items-center h-100">
         <HeaderLogo />
-        <SearchForm className={"d-none d-lg-block"} />
+        <SearchForm
+          className={"d-none d-lg-block"}
+          onSearchingToken={props.onSearch}
+          searchedName={props.searchedName}
+        />
         <MenuButton
           toggleState={buttonToggleState}
           onButtonToggle={toggleTheButtonState}
@@ -26,6 +30,8 @@ const Header = (props) => {
           <OffCanvas
             toggleState={buttonToggleState}
             onClosingOffCanvas={toggleTheButtonState}
+            onSearchingToken={props.onSearch}
+            searchedName={props.searchedName}
           />
         )}
       </Container>

@@ -14,6 +14,7 @@ const CryptoSection = (props) => {
         isAllSelected={props.allState}
         isDecrementalSelected={props.decrementalState}
         isIncrementalSelected={props.incrementalState}
+        name={props.searchedName}
       />
     </Container>
   );
