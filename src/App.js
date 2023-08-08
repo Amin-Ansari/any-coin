@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Structure/Header/Header";
 import CryptoSection from "./components/Structure/CryptoSection/CryptoSection";
 import coinContex from "./Storage/coin-contex";
+import Footer from "./components/CopyRight/Footer";
 
 function App() {
   //These three states below will represent the filter status
@@ -54,6 +55,7 @@ function App() {
         decrementalState={isDecrementalSelect}
         searchedName={searchedToken}
       />
+      <Footer />
     </React.Fragment>
   );
 }

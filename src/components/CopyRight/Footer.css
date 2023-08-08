@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  color: #fff;
+  padding: 1rem 0px;
+  text-align: center;
+  background-color: #19191c;
+}
+.footer a {
+  text-decoration-line: none;
+  font-weight: bold;
+  color: inherit;
+  display: inline-block;
+  margin: 0px 0.4rem;
+  color: #10ac70;
+  font-weight: bold;
+}
