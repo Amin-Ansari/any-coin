@@ -9,6 +9,8 @@ import "./AllCoins.css";
 const CoinsList = (props) => {
   const coins = props.tokenList;
   const coinArray = [];
+  const increamentalCoins = [];
+  const decreamentalCoins = [];
   for (let key in coins) {
     if (coins[key].id) {
       coinArray.push({
@@ -22,6 +24,35 @@ const CoinsList = (props) => {
       });
     }
   }
+
+  for (let key in coins) {
+    if (coins[key]["price_change_percentage_24h"] >= 0) {
+      increamentalCoins.push({
+        id: coins[key].id,
+        tokenName: coins[key]["name"],
+        symbol: coins[key].symbol,
+        price: coins[key]["current_price"],
+        marketCap: coins[key]["market_cap"],
+        changeRate: coins[key]["price_change_percentage_24h"],
+        image: coins[key].image
+      });
+    }
+  }
+  for (let key in coins) {
+    if (coins[key]["price_change_percentage_24h"] < 0) {
+      decreamentalCoins.push({
+        id: coins[key].id,
+        tokenName: coins[key]["name"],
+        symbol: coins[key].symbol,
+        price: coins[key]["current_price"],
+        marketCap: coins[key]["market_cap"],
+        changeRate: coins[key]["price_change_percentage_24h"],
+        image: coins[key].image
+      });
+    }
+  }
+
+  console.log(increamentalCoins);
 
   return (
     <ul className="coins-list">
