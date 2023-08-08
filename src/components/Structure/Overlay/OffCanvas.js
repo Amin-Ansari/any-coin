@@ -5,7 +5,7 @@ import "./OffCanvas.css";
 
 const OffCanvasMenu = (props) => {
   const closeOffCanvas = () => {
-    props.closeFunction(false);
+    props.onClosing(false);
   };
 
   return (
@@ -29,8 +29,7 @@ const OffCanvas = (props) => {
   const parentNode = document.getElementById("overlay");
   return createPortal(
     <OffCanvasMenu
-      closeFunction={props.onClosingOffCanvas}
-      onBaseChange={props.onOffCanvasBaseChange}
+      onClosing={props.onClosingOffCanvas}
       buttonState={props.toggleState}
     />,
     parentNode

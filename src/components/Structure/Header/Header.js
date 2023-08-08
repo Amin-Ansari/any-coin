@@ -22,7 +22,12 @@ const Header = (props) => {
           toggleState={buttonToggleState}
           onButtonToggle={toggleTheButtonState}
         />
-        {buttonToggleState && <OffCanvas toggleState={buttonToggleState} />}
+        {buttonToggleState && (
+          <OffCanvas
+            toggleState={buttonToggleState}
+            onClosingOffCanvas={toggleTheButtonState}
+          />
+        )}
       </Container>
     </header>
   );

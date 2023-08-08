@@ -10,6 +10,7 @@
   justify-content: center;
   cursor: pointer;
   padding: 0px 0.6rem;
+  z-index: 2;
 }
 .bar {
   background-color: #fff;
