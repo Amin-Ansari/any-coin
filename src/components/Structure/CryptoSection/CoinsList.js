@@ -56,7 +56,7 @@ const CoinsList = (props) => {
   }
 
   for (let item of coinArray) {
-    if (item.tokenName.includes(searchedName)) {
+    if (item.tokenName.toLowerCase().includes(searchedName.toLowerCase())) {
       searchedByName.push(item);
     }
   }
